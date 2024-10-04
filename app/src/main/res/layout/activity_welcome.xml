@@ -78,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:text="© Proto Perfect"
+        android:text="©2024 Proto Perfect"
         android:textColor="#80034082"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
