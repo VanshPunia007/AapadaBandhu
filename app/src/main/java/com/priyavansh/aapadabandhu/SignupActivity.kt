@@ -16,6 +16,7 @@ class SignupActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.statusBarColor=Color.BLACK
         setContentView(binding.root)
 
         binding.login.text = Html.fromHtml(
