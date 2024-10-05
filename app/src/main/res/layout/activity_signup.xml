@@ -34,7 +34,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:fontFamily="@font/poppins_medium"
             android:textColor="@color/dark_blue"
             android:visibility="visible" />
@@ -56,7 +56,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:textColor="@color/dark_blue"
             android:fontFamily="@font/poppins_medium"
             android:visibility="visible" />
@@ -78,7 +78,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:textColor="@color/dark_blue"
             android:fontFamily="@font/poppins_medium"
             android:visibility="visible" />
@@ -99,7 +99,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:textColor="@color/dark_blue"
             android:fontFamily="@font/poppins_medium"
             android:visibility="visible" />
@@ -137,10 +137,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:fontFamily="@font/poppins_extrabold"
+        android:fontFamily="@font/poppins_bold"
         android:text="Create Account"
         android:textColor="@color/dark_blue"
-        android:textSize="35dp"
+        android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

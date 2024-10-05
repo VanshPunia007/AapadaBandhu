@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Aapada Bandhu</string>
     <string name="log_in">Log In</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
