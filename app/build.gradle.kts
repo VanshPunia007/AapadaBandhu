@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.map.secret)
 }
 
 android {
@@ -55,6 +56,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation("com.google.android.material:material:1.x.x")
-
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 }
