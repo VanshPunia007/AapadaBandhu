@@ -96,5 +96,27 @@ class MapFragment : Fragment() , OnMapReadyCallback {
         markerOptions2.draggable(true)
         markerOptions2.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
         map?.addMarker(markerOptions2)
+
+        val markerOptions3 = MarkerOptions()
+            .position(latLong3)
+            .title("Location3")
+            .snippet("This is my location3")
+            .alpha(1f) // Opacity of marker
+            .draggable(true)
+            .icon(BitmapDescriptorFactory.fromBitmap(getBitmapFromDrawable(R.drawable.mapmarker))) // Corrected method call
+        map.addMarker(markerOptions3)
+    }
+
+    private fun getBitmapFromDrawable(resId:Int): Bitmap {
+        var bitmap : Bitmap? = null
+        val drawable = ResourcesCompat.getDrawable(resources,resId,null)?: throw IllegalArgumentException("Drawable resource not found")
+        bitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888)
+
+        // Create a canvas and draw the drawable on it
+        val canvas = Canvas(bitmap)
+        drawable.setBounds(0, 0, canvas.width, canvas.height)
+        drawable.draw(canvas)
+
+        return bitmap
     }
 }
