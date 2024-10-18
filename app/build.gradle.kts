@@ -2,7 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.map.secret)
+    alias(libs.plugins.google.gms.google.services)
+
 }
+
+
 
 android {
     namespace = "com.priyavansh.aapadabandhu"
@@ -51,9 +55,13 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation ("com.google.firebase:firebase-bom:33.4.0")
 
     implementation("com.google.android.material:material:1.x.x")
     implementation("com.google.android.gms:play-services-maps:18.1.0")

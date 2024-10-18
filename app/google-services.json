@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "83923419452",
+    "firebase_url": "https://aapada-bandhu-default-rtdb.firebaseio.com",
+    "project_id": "aapada-bandhu",
+    "storage_bucket": "aapada-bandhu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83923419452:android:99ca9a24f011c08758de39",
+        "android_client_info": {
+          "package_name": "com.priyavansh.aapadabandhu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDozjOLwaXMI7DUQvQLqR7wY3JODYFb_EI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

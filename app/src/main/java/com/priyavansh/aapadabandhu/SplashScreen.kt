@@ -9,6 +9,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,9 +18,13 @@ class SplashScreen : AppCompatActivity() {
         window.statusBarColor= Color.BLACK
         setContentView(R.layout.activity_splash_screen)
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, WelcomeActivity::class.java)
-            startActivity(intent)
-            finish()
+            if(Firebase.auth.currentUser == null){
+                finish()
+                startActivity(Intent(this, WelcomeActivity::class.java))
+            }else{
+                finish()
+                startActivity(Intent(this, MainActivity::class.java))
+            }
         }, 3000)
     }
 }
