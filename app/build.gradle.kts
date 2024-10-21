@@ -66,4 +66,10 @@ dependencies {
     implementation("com.google.android.material:material:1.x.x")
     implementation("com.google.android.gms:play-services-maps:18.1.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1")
+    implementation ("com.google.android.material:material:1.5.0")
+
+    implementation ("com.google.ai.client.generativeai:generativeai:0.9.0")
 }
