@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.priyavansh.aapadabandhu.ChatBotActivity
 import com.priyavansh.aapadabandhu.R
+import com.priyavansh.aapadabandhu.ReportActivity
 import com.priyavansh.aapadabandhu.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -25,6 +26,9 @@ class HomeFragment : Fragment() {
 
         binding.ChatbotButton.setOnClickListener {
             startActivity(Intent(requireContext(), ChatBotActivity::class.java))
+        }
+        binding.ReportButton.setOnClickListener {
+            startActivity(Intent(requireContext(), ReportActivity::class.java))
         }
         return binding.root
     }

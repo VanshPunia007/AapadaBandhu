@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
@@ -31,7 +32,10 @@ class ProfileFragment : Fragment() {
                 val user =it.toObject<User>()!!
                 binding.name.text = user.name
                 binding.emailId.text = user.email
-
+                Glide.with(this@ProfileFragment)
+                    .load(user.image)
+                    .circleCrop()
+                    .into(binding.profileImage)
             }
 
         return binding.root

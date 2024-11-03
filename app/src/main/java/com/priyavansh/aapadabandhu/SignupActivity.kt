@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Html
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -16,6 +17,8 @@ import com.google.firebase.firestore.firestore
 import com.priyavansh.aapadabandhu.databinding.ActivitySignupBinding
 import com.priyavansh.aapadabandhu.models.User
 import com.priyavansh.aapadabandhu.utils.USER_NODE
+import com.priyavansh.aapadabandhu.utils.USER_PROFILE_FOLDER
+import com.priyavansh.aapadabandhu.utils.uploadImage
 
 class SignupActivity : AppCompatActivity() {
     val binding by lazy {
@@ -23,6 +26,16 @@ class SignupActivity : AppCompatActivity() {
     }
 
     lateinit var user: User
+    private val launcher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+        uri?.let {
+            uploadImage(uri, USER_PROFILE_FOLDER) {
+                if (it != null) {
+                    user.image = it
+                    binding.profileImage.setImageURI(uri)
+                }
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +48,11 @@ class SignupActivity : AppCompatActivity() {
         binding.login.setOnClickListener {
             startActivity(Intent(this, LoginScreen::class.java))
             finish()
+        }
+
+
+        binding.profileImage.setOnClickListener {
+            launcher.launch("image/*")
         }
 
         binding.signupBtn.setOnClickListener {
