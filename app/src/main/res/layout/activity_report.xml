@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/back2" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/takeImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="50dp"
@@ -49,9 +49,9 @@
         android:text="Attach image"
         android:textColor="@color/dark_blue"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintEnd_toEndOf="@+id/takeImage"
+        app:layout_constraintStart_toStartOf="@+id/takeImage"
+        app:layout_constraintTop_toBottomOf="@+id/takeImage" />
 
     <TextView
         android:id="@+id/textView10"

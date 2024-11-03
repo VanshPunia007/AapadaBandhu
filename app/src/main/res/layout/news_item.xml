@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.cardview.widget.CardView android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
     android:elevation="15dp"
     android:outlineAmbientShadowColor="@color/dark_blue"
-    android:layout_marginBottom="8dp">
+    app:cardCornerRadius="10dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/light_blue">
 
         <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:id="@+id/articleImage"
+            android:layout_width="160dp"
+            android:layout_height="100dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:textAlignment="center"
@@ -28,54 +27,57 @@
             app:srcCompat="@drawable/earthquake" />
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/articleTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="5dp"
             android:fontFamily="@font/poppins_medium"
             android:text="Earthquake"
             android:textColor="@color/dark_blue"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView7"
-            app:layout_constraintTop_toTopOf="@+id/imageView7" />
+            app:layout_constraintStart_toEndOf="@+id/articleImage"
+            app:layout_constraintTop_toTopOf="@+id/articleImage" />
 
         <TextView
-            android:id="@+id/tv14"
+            android:id="@+id/articleDescription"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_height="0dp"
             android:fontFamily="@font/poppins"
+            android:maxLines="2"
             android:text="Earthquake of scale 7 hits the foothills of shiwaliks "
             android:textColor="@color/dark_blue"
-            app:layout_constraintEnd_toEndOf="@+id/title"
-            app:layout_constraintStart_toStartOf="@+id/title"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/articleDateTime"
+            app:layout_constraintEnd_toEndOf="@+id/articleTitle"
+            app:layout_constraintStart_toStartOf="@+id/articleTitle"
+            app:layout_constraintTop_toBottomOf="@+id/articleTitle"
+            app:layout_constraintVertical_bias="0.3" />
 
         <TextView
-            android:id="@+id/source"
+            android:id="@+id/articleSource"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="2dp"
             android:fontFamily="@font/poppins"
             android:text="Zee News"
             android:textColor="@color/dark_blue"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/imageView7"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+            app:layout_constraintStart_toStartOf="@+id/articleImage"
+            app:layout_constraintTop_toBottomOf="@+id/articleImage" />
 
         <TextView
-            android:id="@+id/data_time"
+            android:id="@+id/articleDateTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:fontFamily="@font/poppins"
             android:text="16/03/2001 Kurukshetra"
             android:textColor="@color/dark_blue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/source" />
+            app:layout_constraintBottom_toBottomOf="@+id/articleSource"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
