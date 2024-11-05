@@ -1,6 +1,9 @@
 package com.priyavansh.aapadabandhu
 
+import android.content.Context
 import android.os.Bundle
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +28,11 @@ class ChatBotActivity : AppCompatActivity() {
 
         setupRecyclerView()
 
+        // back button
+        binding.backBtn.setOnClickListener {
+            finish()
+        }
+
         // Send button click listener
         binding.sendButton.setOnClickListener {
             val message = binding.messageInput.text.toString()
@@ -32,12 +40,24 @@ class ChatBotActivity : AppCompatActivity() {
                 chatViewModel.sendMessage(message)
                 binding.messageInput.text.clear()
             }
+            // Close the keyboard
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(binding.messageInput.windowToken, 0)
         }
 
         // Observe chat messages
         chatViewModel.list.observe(this) { chatData ->
             adapter.submitList(chatData)
             binding.chatRecyclerView.scrollToPosition(chatData.size - 1)
+            if (chatData.isNotEmpty()) {
+                binding.appLogo.visibility = View.GONE
+                binding.startupText.visibility = View.GONE
+                binding.chatRecyclerView.visibility = View.VISIBLE
+            } else {
+                binding.appLogo.visibility = View.VISIBLE
+                binding.startupText.visibility = View.VISIBLE
+                binding.chatRecyclerView.visibility = View.GONE
+            }
         }
     }
 

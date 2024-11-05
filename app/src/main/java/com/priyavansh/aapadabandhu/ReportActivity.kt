@@ -35,6 +35,12 @@ class ReportActivity : AppCompatActivity() {
             cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
             startActivityForResult(cameraIntent, pic_id)
         }
+        binding.uploadImage.setOnClickListener {
+            imageUri = createImageUri()
+            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
+            startActivityForResult(cameraIntent, pic_id)
+        }
 
     }
 

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue"
+    android:background="@color/white"
     tools:context=".SplashScreen">
 
     <ImageView
@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="©2024 Proto Perfect"
-        android:textColor="@color/dark_blue"
         android:textAlignment="center"
+        android:textColor="@color/dark_blue"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
