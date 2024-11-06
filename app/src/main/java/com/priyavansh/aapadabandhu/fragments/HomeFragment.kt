@@ -2,6 +2,7 @@ package com.priyavansh.aapadabandhu.fragments
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -55,6 +56,13 @@ class HomeFragment : Fragment() {
         binding.ReportButton.setOnClickListener {
             startActivity(Intent(requireContext(), ReportActivity::class.java))
         }
+
+        binding.sos.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:01124363260")  // The number you want to dial
+            startActivity(intent)
+        }
+
         return binding.root
     }
 
