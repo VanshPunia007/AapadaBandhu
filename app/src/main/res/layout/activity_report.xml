@@ -34,36 +34,57 @@
 
     <ImageView
         android:id="@+id/takeImage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:srcCompat="@drawable/camera" />
 
     <TextView
-        android:id="@+id/uploadImage"
+        android:id="@+id/captureImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Upload image"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="3dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/chatbot_reply_design"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="3dp"
+        android:text="Capture image"
         android:textColor="@color/dark_blue"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/takeImage"
         app:layout_constraintStart_toStartOf="@+id/takeImage"
         app:layout_constraintTop_toBottomOf="@+id/takeImage" />
 
+    <Button
+        android:id="@+id/uploadImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#FF0000"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="3dp"
+        android:text="Upload Image"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/captureImage"
+        app:layout_constraintStart_toStartOf="@+id/captureImage"
+        app:layout_constraintTop_toBottomOf="@+id/captureImage" />
+
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/poppins_medium"
         android:text="Type of Disaster:"
         android:textColor="@color/dark_blue"
@@ -74,7 +95,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/type"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:hint="Type of disaster....."
@@ -105,10 +126,11 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/type"
         app:layout_constraintTop_toBottomOf="@+id/type" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/location"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:hint="Location"
@@ -139,10 +161,11 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/location"
         app:layout_constraintTop_toBottomOf="@+id/location" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/description"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:hint="Description"
@@ -174,4 +197,6 @@
         app:layout_constraintEnd_toEndOf="@+id/description"
         app:layout_constraintStart_toStartOf="@+id/description"
         app:layout_constraintTop_toBottomOf="@+id/description" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
