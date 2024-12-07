@@ -35,6 +35,9 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_image">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameEditText"
+            android:inputType="text"
+            android:imeOptions="actionNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
@@ -58,6 +61,9 @@
         app:layout_constraintTop_toBottomOf="@+id/name">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEditText"
+            android:inputType="text"
+            android:imeOptions="actionNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
@@ -81,6 +87,9 @@
         app:layout_constraintTop_toBottomOf="@+id/email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/aadharEditText"
+            android:inputType="text"
+            android:imeOptions="actionNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
@@ -103,6 +112,9 @@
         app:layout_constraintTop_toBottomOf="@+id/aadhar">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passEditText"
+            android:inputType="text"
+            android:imeOptions="actionDone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"

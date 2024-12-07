@@ -1,8 +1,11 @@
 package com.priyavansh.aapadabandhu
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +26,27 @@ class LoginScreen : AppCompatActivity() {
         binding.signup.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
             finish()
+        }
+
+        binding.emailEditText.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_NEXT) {
+                // Hide the keyboard
+                binding.passEditText.requestFocus()
+                true
+            } else {
+                false
+            }
+        }
+
+        binding.passEditText.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_NEXT) {
+                // Hide the keyboard
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(v.windowToken, 0)
+                true
+            } else {
+                false
+            }
         }
 
         binding.loginbtn.setOnClickListener {

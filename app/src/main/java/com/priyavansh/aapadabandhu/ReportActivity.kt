@@ -30,6 +30,8 @@ import java.io.IOException
 import java.util.UUID
 import android.location.Location
 import android.util.Log
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
@@ -59,6 +61,38 @@ class ReportActivity : AppCompatActivity() {
         binding.uploadImage.setOnClickListener {
             launcher.launch("image/*")
         }
+
+        binding.typeEditText.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_NEXT) {
+                // Move focus to locationEditText
+                binding.locationEditText.requestFocus()
+                true
+            } else {
+                false
+            }
+        }
+
+        binding.locationEditText.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_NEXT) {
+                // Move focus to descriptionEditText
+                binding.descriptionEditText.requestFocus()
+                true
+            } else {
+                false
+            }
+        }
+
+        binding.descriptionEditText.setOnEditorActionListener { v, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                // Hide the keyboard for the last field
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(v.windowToken, 0)
+                true
+            } else {
+                false
+            }
+        }
+
 
         Firebase.firestore.collection(USER_NODE)
             .document(userID)

@@ -115,4 +115,7 @@ dependencies {
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
     ksp ("com.github.bumptech.glide:compiler:4.12.0")
+
+    // time
+    implementation ("com.github.marlonlom:timeago:4.0.3")
 }

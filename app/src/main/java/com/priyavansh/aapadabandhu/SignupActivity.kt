@@ -1,9 +1,12 @@
 package com.priyavansh.aapadabandhu
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Html
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
@@ -42,6 +45,47 @@ class SignupActivity : AppCompatActivity() {
         window.statusBarColor=Color.BLACK
         setContentView(binding.root)
         user = User()
+
+        binding.nameEditText.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                // Hide the keyboard
+                binding.emailEditText.requestFocus()
+                true
+            } else {
+                false
+            }
+        }
+
+        binding.emailEditText.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                // Hide the keyboard
+                binding.aadharEditText.requestFocus()
+                true
+            } else {
+                false
+            }
+        }
+
+        binding.aadharEditText.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                // Hide the keyboard
+                binding.aadharEditText.requestFocus()
+                true
+            } else {
+                false
+            }
+        }
+        binding.passEditText.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                // Hide the keyboard
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(v.windowToken, 0)
+                true
+            } else {
+                false
+            }
+        }
+
         binding.login.text = Html.fromHtml(
             "<font color=#023F81>Already have an account? </font>" + "<font color=#1E88E5> Login</font>"
         )
@@ -49,7 +93,6 @@ class SignupActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginScreen::class.java))
             finish()
         }
-
 
         binding.profileImage.setOnClickListener {
             launcher.launch("image/*")
